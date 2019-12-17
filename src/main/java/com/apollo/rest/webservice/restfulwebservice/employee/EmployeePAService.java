@@ -1,4 +1,4 @@
-package com.apollo.rest.webservice.restfulwebservice.person;
+package com.apollo.rest.webservice.restfulwebservice.employee;
 
 import java.net.URI;
 import java.util.List;
@@ -18,19 +18,19 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @CrossOrigin(origins="http://localhost:3000")
-public class PersonPAService {
+public class EmployeePAService {
 	
 	@Autowired
-	private PersonJPARepository personRepository;
+	private EmployeeJPARepository employeeRepository;
 	
-	@GetMapping("/jpa/persons")
-	public List<Person> getAllTasks(){
-		return personRepository.findAll();
+	@GetMapping("/jpa/employee")
+	public List<Employee> getAllTasks(){
+		return employeeRepository.findAll();
 	}
 	
-	@GetMapping("/jpa/persons/{id}")
-	public Person getTask(@PathVariable long id){
-		return personRepository.findById(id).get();
+	@GetMapping("/jpa/employee/{id}")
+	public Employee getTask(@PathVariable long id){
+		return employeeRepository.findById(id).get();
 	}
 	
 //	@DeleteMapping("/jpa/users/{username}/tasks/{id}")

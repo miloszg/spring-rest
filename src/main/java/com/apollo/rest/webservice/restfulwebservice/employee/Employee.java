@@ -1,4 +1,4 @@
-package com.apollo.rest.webservice.restfulwebservice.person;
+package com.apollo.rest.webservice.restfulwebservice.employee;
 
 import java.util.Date;
 
@@ -10,13 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Person")
-public class Person {
+@Table(name="employee")
+public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private Long id;
+	private Integer id;
 
 	@Column(name="username")
 	private String username;
@@ -24,25 +24,25 @@ public class Person {
 	@Column(name="password")
 	private String password;
 	
-	@Column(name="privileges")
-	private String privileges;
+	@Column(name="role")
+	private String role;
 
-	public Person() {
+	public Employee() {
 	}
 
-	public Person(String username, String password, String privileges) {
+	public Employee(String username, String password, String role) {
 		this.username = username;
 		this.password = password;
-		this.privileges = privileges;
+		this.role = role;
 	}
 
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -77,15 +77,15 @@ public class Person {
 
 
 
-	public String getPrivileges() {
-		return privileges;
+	public String getRole() {
+		return role;
 	}
 
 
 
 
-	public void setPrivileges(String privileges) {
-		this.privileges = privileges;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 
@@ -107,7 +107,7 @@ public class Person {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person other = (Person) obj;
+		Employee other = (Employee) obj;
 		if (id != other.id)
 			return false;
 		return true;
