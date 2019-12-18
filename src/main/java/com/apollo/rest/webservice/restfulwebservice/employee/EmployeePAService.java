@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins= {"http://localhost:3000","http://192.168.2.101:8080"})
 public class EmployeePAService {
 	
 	@Autowired
